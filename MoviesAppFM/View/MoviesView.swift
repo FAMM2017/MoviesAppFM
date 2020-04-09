@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MoviesViewDelegate {
+class MoviesView: UIViewController, UITableViewDataSource, UITableViewDelegate, MoviesViewDelegate {
     private let moviesViewPresenter = MoviesPresenter(moviesInteractor: MoviesInteractor())
 
     @IBOutlet weak var moviesTableView: UITableView!
@@ -74,9 +74,23 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         }
         return cell
        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let moviesViewDetails = MoviesViewDetails()
+        moviesViewDetails.movie = self.moviesList?[indexPath.row]
+        self.performSegue(withIdentifier: "showmoviedetails", sender: self)
+    }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         moviesViewPresenter.handleInfiniteScroll(totalMovies: moviesList?.count, position: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showmoviedetails" {
+            if let moviesViewDetails = segue.destination as? MoviesViewDetails {
+                moviesViewDetails.movie = self.moviesList?[moviesTableView.indexPathForSelectedRow?.row ?? 0 ]
+            }
+        }
     }
     
 }

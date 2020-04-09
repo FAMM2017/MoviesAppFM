@@ -7,6 +7,8 @@ target 'MoviesAppFM' do
 
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireObjectMapper', '~> 5.2'
+  pod 'AlamofireImage', '~> 3.0'
+
   # Pods for MoviesAppFM
 
   target 'MoviesAppFMTests' do
