@@ -6,36 +6,41 @@
 //  Copyright © 2020 mac. All rights reserved.
 //
 
-import Foundation
+import ObjectMapper
 
-struct Movie: Codable {
+class Movie: Mappable {
     
-    let popularity: Double?
-    let voteCount: Int?
-    let video: Bool?
-    let posterPath: String?
-    let id: Int?
-    let adult: Bool?
-    let backdropPath, originalLanguage, originalTitle: String?
-    let genreIDS: [Int]?
-    let title: String?
-    let voteAverage: Double?
-    let overview, releaseDate: String?
+    var popularity: Double?
+    var voteCount: Int?
+    var video: Bool?
+    var posterPath: String?
+    var id: Int?
+    var adult: Bool?
+    var backdropPath, originalLanguage, originalTitle: String?
+    var genreIDS: [Int]?
+    var title: String?
+    var voteAverage: Double?
+    var overview, releaseDate: String?
     
-    enum CodingKeys: String, CodingKey {
-           case popularity
-           case voteCount = "vote_count"
-           case video
-           case posterPath = "poster_path"
-           case id, adult
-           case backdropPath = "backdrop_path"
-           case originalLanguage = "original_language"
-           case originalTitle = "original_title"
-           case genreIDS = "genre_ids"
-           case title
-           case voteAverage = "vote_average"
-           case overview
-           case releaseDate = "release_date"
-       }
+    required init?(map: Map){
+
+    }
+    
+    func mapping(map: Map) {
+        popularity <- map["popularity"]
+        voteCount <- map["vote_count"]
+        video <- map["video"]
+        posterPath <- map["poster_path"]
+        id <- map["id"]
+        adult <- map["adult"]
+        backdropPath <- map["backdrop_path"]
+        originalLanguage <- map["original_language"]
+        originalTitle <- map["original_title"]
+        genreIDS <- map["genre_ids"]
+        title <- map["title"]
+        voteAverage <- map["vote_average"]
+        overview <- map["overview"]
+        releaseDate <- map["release_date"]
+    }
     
 }

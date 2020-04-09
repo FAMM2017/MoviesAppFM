@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s7d-r2-bSU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,15 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Peliculas populares" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o5l-Ji-WOp">
-                                <rect key="frame" x="20" y="64" width="374" height="34"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k2H-6Y-Nxk">
-                                <rect key="frame" x="20" y="106" width="374" height="776"/>
+                                <rect key="frame" x="20" y="98" width="374" height="784"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoviesCell" textLabel="gru-76-4bf" style="IBUITableViewCellStyleDefault" id="2Lb-Ug-TgJ">
@@ -45,16 +39,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peliculas populares" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5D-4B-z1d">
+                                <rect key="frame" x="0.0" y="56" width="414" height="30"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kwf-Ro-PG8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Ge5-yr-tfj" firstAttribute="trailing" secondItem="o5l-Ji-WOp" secondAttribute="trailing" constant="20" id="1fw-nv-Uzh"/>
-                            <constraint firstItem="k2H-6Y-Nxk" firstAttribute="top" secondItem="o5l-Ji-WOp" secondAttribute="bottom" constant="8" id="N4q-aY-tNz"/>
-                            <constraint firstItem="k2H-6Y-Nxk" firstAttribute="top" secondItem="o5l-Ji-WOp" secondAttribute="bottom" constant="8" id="V4I-07-Ac4"/>
-                            <constraint firstItem="o5l-Ji-WOp" firstAttribute="top" secondItem="Ge5-yr-tfj" secondAttribute="top" constant="20" id="VhS-pw-sSJ"/>
-                            <constraint firstItem="o5l-Ji-WOp" firstAttribute="leading" secondItem="Ge5-yr-tfj" secondAttribute="leading" constant="20" id="WEM-rB-Fcb"/>
+                            <constraint firstItem="B5D-4B-z1d" firstAttribute="trailing" secondItem="Ge5-yr-tfj" secondAttribute="trailing" id="CTl-X8-T64"/>
+                            <constraint firstItem="B5D-4B-z1d" firstAttribute="leading" secondItem="Ge5-yr-tfj" secondAttribute="leading" id="ZJ7-t5-T65"/>
                             <constraint firstItem="k2H-6Y-Nxk" firstAttribute="leading" secondItem="Ge5-yr-tfj" secondAttribute="leading" constant="20" id="eFC-e8-yhh"/>
+                            <constraint firstItem="B5D-4B-z1d" firstAttribute="top" secondItem="Ge5-yr-tfj" secondAttribute="top" constant="12" id="eZD-YS-khX"/>
                             <constraint firstItem="Ge5-yr-tfj" firstAttribute="trailing" secondItem="k2H-6Y-Nxk" secondAttribute="trailing" constant="20" id="eZK-M3-P9e"/>
+                            <constraint firstItem="k2H-6Y-Nxk" firstAttribute="top" secondItem="B5D-4B-z1d" secondAttribute="bottom" constant="12" id="hYz-mr-skW"/>
                             <constraint firstItem="k2H-6Y-Nxk" firstAttribute="bottom" secondItem="Ge5-yr-tfj" secondAttribute="bottom" constant="20" id="zDd-WG-0tY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ge5-yr-tfj"/>
@@ -65,7 +68,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y25-eL-Lle" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="735" y="117"/>
+            <point key="canvasLocation" x="734.78260869565224" y="116.51785714285714"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="o4p-PR-Bv9">
+            <objects>
+                <viewController id="chl-Fo-4fq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R5t-Af-w1e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peliculas populares" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R08-uD-AA9">
+                                <rect key="frame" x="0.0" y="56" width="414" height="30"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="qgw-l1-MT5"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="vhe-gQ-S16"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ew3-8S-hoY">
+                                <rect key="frame" x="122" y="106" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="jVU-aA-1eK"/>
+                                    <constraint firstAttribute="width" constant="170" id="wYf-Fw-KOH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loren itsumLoren itsumLoren itsumLoren itsumLoren itsumLoren itsumLoren " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tou-Bd-JAP">
+                                <rect key="frame" x="20" y="296" width="374" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="w04-Zj-lSr" firstAttribute="trailing" secondItem="tou-Bd-JAP" secondAttribute="trailing" constant="20" id="9oh-aj-vPs"/>
+                            <constraint firstItem="R08-uD-AA9" firstAttribute="leading" secondItem="w04-Zj-lSr" secondAttribute="leading" id="AkJ-wS-fW0"/>
+                            <constraint firstItem="Ew3-8S-hoY" firstAttribute="centerX" secondItem="w04-Zj-lSr" secondAttribute="centerX" id="TcO-zX-vGl"/>
+                            <constraint firstItem="Ew3-8S-hoY" firstAttribute="top" secondItem="R08-uD-AA9" secondAttribute="bottom" constant="20" id="V99-uj-Z9a"/>
+                            <constraint firstItem="tou-Bd-JAP" firstAttribute="top" secondItem="Ew3-8S-hoY" secondAttribute="bottom" constant="20" id="Wlu-Gj-4Xx"/>
+                            <constraint firstItem="Ew3-8S-hoY" firstAttribute="top" secondItem="R08-uD-AA9" secondAttribute="bottom" constant="20" id="XkR-dt-Z8J"/>
+                            <constraint firstItem="R08-uD-AA9" firstAttribute="trailing" secondItem="w04-Zj-lSr" secondAttribute="trailing" id="pU2-RJ-2l4"/>
+                            <constraint firstItem="tou-Bd-JAP" firstAttribute="top" secondItem="Ew3-8S-hoY" secondAttribute="bottom" constant="20" id="vbe-3m-gtT"/>
+                            <constraint firstItem="tou-Bd-JAP" firstAttribute="leading" secondItem="w04-Zj-lSr" secondAttribute="leading" constant="20" id="wOt-7A-uFS"/>
+                            <constraint firstItem="R08-uD-AA9" firstAttribute="top" secondItem="w04-Zj-lSr" secondAttribute="top" constant="12" id="xFv-LS-EHK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w04-Zj-lSr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3hP-ns-Eaa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1478.2608695652175" y="118.52678571428571"/>
         </scene>
     </scenes>
 </document>
